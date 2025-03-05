@@ -27,7 +27,9 @@ import { HousingLocation } from '../../interfaces/housinglocation';
 export class HomeComponent {
   housingLocations: HousingLocation[] = [];
 
-  constructor (private housingService: HousingService) {
+  constructor (private housingService: HousingService) {}
+
+  ngOnInit(): void {
     this.housingService.getAllHousingLocations().subscribe((data) => {
       this.housingLocations = data;
     })
